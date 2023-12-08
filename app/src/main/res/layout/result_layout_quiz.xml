@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvResultTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Score"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score: ?/?"
+        android:textColor="@color/dark"
+        android:textSize="26sp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="26dp"/>
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        android:backgroundTint="@color/dark"
+        android:textColor="@color/lemon"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

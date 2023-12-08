@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.screens.profile.ProfileFragment">
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp">
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="@string/profile"
+            android:background="@drawable/round_bg"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/icEditProfilePic"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_add"
+            android:layout_gravity="bottom|end"
+            android:contentDescription="@string/edit_profile_pic"
+            app:tint="@color/blue" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="26dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:textColor="@color/lemon"
+        android:backgroundTint="@color/dark"
+        android:text="@string/logout" />
+
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.screens.leaderboard.LeaderBoardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/ic_ranking" />
+
+        <TextView
+            android:id="@+id/tvLeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LeaderBoard"
+            android:textColor="@color/dark"
+            android:textStyle="bold"
+            android:drawableTint="@color/dark"
+            android:textSize="24dp"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="@color/dark"
+        android:textColorHint="@color/dark"
+        android:layout_marginBottom="20dp"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu" >
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:hint="Sort Rank by Quiz Id"
+            android:inputType="none"
+            android:padding="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLeaderBoard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+

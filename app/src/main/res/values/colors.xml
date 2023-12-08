@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="gray">#B6B6B6</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="error">#D51C1C</color>
+    <color name="olive">#638855</color>
+    <color name="lime">#A5FF85</color>
+    <color name="lemon">#E8CE23</color>
+    <color name="blue">#83baea</color>
+    <color name="taro">#9A75CF</color>
+    <color name="dark">#363D80</color>
+    <color name="dim">#0E6B77</color>
+</resources>

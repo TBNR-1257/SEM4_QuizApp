@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Personal Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="new_user">New User?</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="delete">Delete</string>
+    <string name="already_have_an_account">Already have an Account?</string>
+    <string name="profile">Profile</string>
+    <string name="edit_profile_pic">Edit Profile Pic</string>
+    <string name="username">Name: POtaTo_SLaYer</string>
+    <string name="email_profile">Email: Im dead</string>
+    <string name="logout">Logout</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="created_at">Created At</string>
+    <string name="update">Update</string>
+    <string name="name">Name</string>
+    <string name="role">Select Role</string>
+
+    <string-array name="roles_array">
+        <item>Teacher</item>
+        <item>Student</item>
+    </string-array>
+
+</resources>
