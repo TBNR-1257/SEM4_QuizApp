@@ -40,19 +40,6 @@ class MainActivity: AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
 
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.loginFragment, R.id.registerFragment, R.id.quizFragment, R.id.addQuizFragment, R.id.joinQuizFragment -> {
-                    bottomNavigationView.visibility = View.GONE
-                }
-                else -> {
-                    bottomNavigationView.visibility = View.VISIBLE
-                }
-            }
-        }
-    }
-
-    fun setupNavigation() {
         lifecycleScope.launch {
             val currentUser = authService.getCurrentUser()
             val user = currentUser?.let { userRepo.getUser(it.uid) }
@@ -68,7 +55,37 @@ class MainActivity: AppCompatActivity() {
                 true
             }
         }
+
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.loginFragment, R.id.registerFragment, R.id.quizFragment, R.id.addQuizFragment, R.id.joinQuizFragment -> {
+                    bottomNavigationView.visibility = View.GONE
+                }
+                else -> {
+                    bottomNavigationView.visibility = View.VISIBLE
+                }
+            }
+        }
     }
+
+//    fun setupNavigation() {
+//        lifecycleScope.launch {
+//            val currentUser = authService.getCurrentUser()
+//            val user = currentUser?.let { userRepo.getUser(it.uid) }
+//
+//            bottomNavigationView.setOnItemSelectedListener{
+//                val id = when(it.itemId) {
+//                    R.id.home -> if(user?.role == "Student") R.id.studentDashFragment else R.id.teacherDashFragment
+//                    R.id.leaderboard -> R.id.leaderboardFragment
+//                    R.id.profile -> R.id.profileFragment
+//                    else -> R.id.profileFragment
+//                }
+//                navController.navigate(id)
+//                true
+//            }
+//        }
+//    }
 
 
 }
