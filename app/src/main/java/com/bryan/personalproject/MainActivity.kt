@@ -69,6 +69,7 @@ class MainActivity: AppCompatActivity() {
         }
     }
 
+
 //    fun setupNavigation() {
 //        lifecycleScope.launch {
 //            val currentUser = authService.getCurrentUser()
