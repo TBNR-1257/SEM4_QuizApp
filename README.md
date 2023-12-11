@@ -33,11 +33,11 @@ Acknowledgments
 This project is a part of a school assignment for the 4th semester.
 
 Contact Information
-For any queries, please reach out to waijian22g@forward.edu.my.
+For any queries, please reach out to tzehernbryan22w@forward.edu.my.
 
 Frequently Asked Questions or Troubleshooting
 Q: I forgot my password. How can I reset it? A: Currently, the app does not support password reset. This feature will be added in a future update.
 
-Q: The app is not displaying any recipes. What can I do? A: Restart the app and try again. If the problem persists, please report the issue by sending an email to waijian22g@forward.edu.my.
+Q: The app is not displaying any recipes. What can I do? A: Restart the app and try again. If the problem persists, please report the issue by sending an email to tzehernbryan22w@forward.edu.my.
 
-Q: The app is crashing. What can I do? A: Restart the app and try again. If the problem persists, please report the issue by sending an email to waijian22g@forward.edu.my.
+Q: The app is crashing. What can I do? A: Restart the app and try again. If the problem persists, please report the issue by sending an email to tzehernbryan22w@forward.edu.my.
