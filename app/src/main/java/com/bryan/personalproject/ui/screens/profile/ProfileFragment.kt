@@ -1,5 +1,6 @@
 package com.bryan.personalproject.ui.screens.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,6 +12,8 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.bryan.personalproject.AuthActivity
+import com.bryan.personalproject.MainActivity
 import com.bryan.personalproject.R
 import com.bryan.personalproject.databinding.FragmentProfileBinding
 import com.bryan.personalproject.ui.screens.base.BaseFragment
@@ -80,8 +83,9 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
         lifecycleScope.launch {
             viewModel.finish.collect {
-                val action = ProfileFragmentDirections.profileToLogin()
-                navController.navigate(action)
+                val intent = Intent(requireContext(), AuthActivity::class.java)
+                requireActivity().startActivity(intent)
+                (requireActivity() as MainActivity).finish()
             }
         }
 

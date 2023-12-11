@@ -28,8 +28,8 @@ class LoginViewModelImpl @Inject constructor(
     private val _navigateToTeacherDash = MutableSharedFlow<Unit>()
     val navigateToTeacherDash: SharedFlow<Unit> get() = _navigateToTeacherDash
 
-    private val _user = MutableStateFlow(User(name = "Unknown", email = "Unknown", role = "Unknown"))
-    val user: StateFlow<User> = _user
+    private val _user = MutableSharedFlow<User>()
+    val user: SharedFlow<User> = _user
 
 
     override fun login(email: String, pass: String) {
@@ -52,7 +52,7 @@ class LoginViewModelImpl @Inject constructor(
             viewModelScope.launch(Dispatchers.IO) {
                 errorHandler { userRepo.getUser(it.uid) }?.let {  user ->
                     Log.d("debugging", user.toString())
-                    _user.value = user
+                    _user.emit(user)
 //                    navigateBasedOnRole(user.role)
                 }
             }

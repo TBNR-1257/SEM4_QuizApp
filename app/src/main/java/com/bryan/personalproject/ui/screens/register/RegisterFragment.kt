@@ -71,7 +71,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
         super.setupViewModelObserver(view)
         lifecycleScope.launch {
             viewModel.success.collect {
-                val action = RegisterFragmentDirections.registerToLogin()
+                val action = RegisterFragmentDirections.actionRegisterToLogin()
                 navController.navigate(action)
             }
         }

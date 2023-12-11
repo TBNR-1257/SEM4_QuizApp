@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/studentDashFragment">
+
+    <action android:id="@+id/actionToTeacherDash"
+        app:destination="@+id/teacherDashFragment"
+        app:popUpTo="@id/studentDashFragment"
+        app:popUpToInclusive="true" />
 
 
     <action android:id="@+id/teacher_dash_to_add_quiz"
@@ -15,12 +20,6 @@
         app:popUpTo="@id/addQuizFragment"
         app:popUpToInclusive="true"
         app:destination="@+id/teacherDashFragment" />
-
-    <action
-        android:id="@+id/register_to_login"
-        app:popUpTo="@id/registerFragment"
-        app:popUpToInclusive="true"
-        app:destination="@id/loginFragment" />
 
     <action android:id="@+id/quiz_to_dash"
         app:popUpTo="@id/quizFragment"
@@ -38,41 +37,6 @@
         app:popUpToInclusive="true"
         app:destination="@id/joinQuizFragment" />
 
-    <action
-        android:id="@+id/login_to_student_dash"
-        app:popUpTo="@id/loginFragment"
-        app:popUpToInclusive="true"
-        app:destination="@id/studentDashFragment" />
-
-    <action
-        android:id="@+id/login_to_teacher_dash"
-        app:popUpTo="@id/loginFragment"
-        app:popUpToInclusive="true"
-        app:destination="@id/teacherDashFragment" />
-
-    <action
-        android:id="@+id/profile_to_login"
-        app:popUpTo="@id/profileFragment"
-        app:popUpToInclusive="true"
-        app:destination="@id/loginFragment" />
-
-
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.bryan.personalproject.ui.screens.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/login_to_register"
-            app:destination="@id/registerFragment" />
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.bryan.personalproject.ui.screens.register.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/studentDashFragment"
         android:name="com.bryan.personalproject.ui.screens.studentdash.StudentDashFragment"

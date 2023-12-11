@@ -7,6 +7,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.bryan.personalproject.core.service.AuthService
@@ -35,31 +36,33 @@ class MainActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val role = intent.getStringExtra("role")
 
         navController = findNavController(R.id.navHostFragment)
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
+
+        if(role == "Teacher") {
+            navController.popBackStack(R.id.studentDashFragment, true)
+            navController.navigate(R.id.teacherDashFragment)
+        }
 
 
-        lifecycleScope.launch {
-            val currentUser = authService.getCurrentUser()
-            val user = currentUser?.let { userRepo.getUser(it.uid) }
+        bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
 
-            bottomNavigationView.setOnItemSelectedListener{
-                val id = when(it.itemId) {
-                    R.id.home -> if(user?.role == "Student") R.id.studentDashFragment else R.id.teacherDashFragment
-                    R.id.leaderboard -> R.id.leaderboardFragment
-                    R.id.profile -> R.id.profileFragment
-                    else -> R.id.profileFragment
-                }
-                navController.navigate(id)
-                true
+        bottomNavigationView.setOnItemSelectedListener{
+            val id = when(it.itemId) {
+                R.id.home -> if(role == "Student") R.id.studentDashFragment else R.id.teacherDashFragment
+                R.id.leaderboard -> R.id.leaderboardFragment
+                R.id.profile -> R.id.profileFragment
+                else -> R.id.profileFragment
             }
+            navController.navigate(id)
+            true
         }
 
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.loginFragment, R.id.registerFragment, R.id.quizFragment, R.id.addQuizFragment, R.id.joinQuizFragment -> {
+                R.id.quizFragment, R.id.addQuizFragment, R.id.joinQuizFragment -> {
                     bottomNavigationView.visibility = View.GONE
                 }
                 else -> {
@@ -68,25 +71,4 @@ class MainActivity: AppCompatActivity() {
             }
         }
     }
-
-
-//    fun setupNavigation() {
-//        lifecycleScope.launch {
-//            val currentUser = authService.getCurrentUser()
-//            val user = currentUser?.let { userRepo.getUser(it.uid) }
-//
-//            bottomNavigationView.setOnItemSelectedListener{
-//                val id = when(it.itemId) {
-//                    R.id.home -> if(user?.role == "Student") R.id.studentDashFragment else R.id.teacherDashFragment
-//                    R.id.leaderboard -> R.id.leaderboardFragment
-//                    R.id.profile -> R.id.profileFragment
-//                    else -> R.id.profileFragment
-//                }
-//                navController.navigate(id)
-//                true
-//            }
-//        }
-//    }
-
-
 }
